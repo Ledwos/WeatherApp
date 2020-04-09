@@ -1,38 +1,26 @@
-## Learning React 
+# Weather App
 
-> # Aim:
->
-> The aim of this project is to learn React by building a weather app using the framework.
-> Should all go to plan the next step would be to implement / learn Redux however that is not
-> something to think about for now
+## Description:
 
-> # Plan:
->>
->> # MVP:
->>
->>> - Search bar
->>> - Fetch data from API
->>> - Sort data into user friendly format
->>
->>
+- As the name suggests, a simple weather app allowing one to view current weather in a location of their choosing.
 
+- Originally an old repository with a dysfunctional app. The aim is to completely revamp this repository to show what I am capable  of using React for the frontend with a backend of my choosing.
 
+## User Stories:
 
+### As a user I would like to:
 
-> # User Stories:
->
-> As a user: 
->
->> - I would like to get current weather information for a city of my choosing
->> - I would like to have the general weather stats displayed in a sensible results box
->> 
->Once the MVP is finished:
->
->> As a user:
->>
->> - I would like to have the option of viewing Current / Daily / Weekly information
->>   in a sensible format (i.e. once query entered the results box should give the
->>   option to toggle between the different views)
+- Have an interface for me to enter the location for which I wish to see the weather
 
+- See the weather results upon submitting my query
 
+- Have an image associated with the location load along with my results
+
+## Technologies Used:
+
+- React
+- HTML
+- CSS
+- Node
+- Flask?
 
