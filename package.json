@@ -1,0 +1,29 @@
+{
+  "name": "WeatherApp",
+  "version": "1.0.0",
+  "description": "- As the name suggests, a simple weather app allowing one to view current weather in a location of their choosing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ledwos/WeatherApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ledwos/WeatherApp/issues"
+  },
+  "homepage": "https://github.com/Ledwos/WeatherApp#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
