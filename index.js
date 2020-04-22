@@ -4,27 +4,28 @@ const path = require('path');
 const app = express();
 const fetch = require('node-fetch');
 
-// app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+// TRY CATCH FOR API CALLS
 
 app.get('/api/weather', (req,res) => {
     var weather;
     var test = 'sydney';
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${test}&units=metric&APPID=${process.env.W_API_KEY}`)
         .then(response => response.json())
-        .then(data => {
-            // console.log(data);
-            res.json(data);
-        })
-    console.log('api path called!');
-    // res.json(weather);
+        .then(data => res.json(data));
+    console.log('weather api called!');
 });
 
 //unsplash fetch
-// fetch(`https://api.unsplash.com/search/photos/?page=1&per_page=1&query=LOCATION_QUERY_HERE&client_id=${process.env.U_API_KEY}`)
+
+// app.get('/api/image', (req,res) => {
+//     var test = 'tokyo';
+//     fetch(`https://api.unsplash.com/photos/?page=1&per_page=1&query=${test}&client_id=${process.env.U_API_KEY}`)
 //         .then(response => response.json())
-//         .then(data => this.setState({imgData: data}));
-
-
+//         .then(data => res.json(data));
+//     console.log('image api called');
+// })
 
 // catchall handler
 // make a separate 404 html?
