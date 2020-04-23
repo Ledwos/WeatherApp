@@ -12,11 +12,15 @@ class App extends React.Component {
     }
   }
 
+  locUpdate(loc) {
+    this.setState({location: loc});
+  }
+
   render() {
     return (
       <div className='App'>
         <h2>this is the App title</h2>
-        <Search location={this.state.location} />
+        <Search location={this.state.location} locUpdate={this.locUpdate.bind(this)} />
         <Weather result={this.state.result} />
       </div>
     )
