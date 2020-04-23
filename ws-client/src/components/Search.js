@@ -3,15 +3,21 @@ import './Search.css';
 
 function Search(props) {
 
-    function handleChange(event) {
-        event.preventDefault();
+    handleChange = (event) => {
         var loc = event.target.value;
         props.locUpdate(loc);
-    }
+    };
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        props.handleFetch();
+    };
 
     return (
         <div id='SearchDiv'>
-            <input id='searchBar' type='text' onChange={handleChange}></input>
+            <form>
+                <input id='searchBar' type='text' onChange={this.handleChange()} onSubmit={this.handleSubmit()}></input>
+            </form>
             <p>i'm a search component</p>
             <p>location is: {props.location}</p>
         </div>
