@@ -9,7 +9,9 @@ class App extends React.Component {
     this.state = {
       location: "sydney",
       result: "not obtained yet"
-    }
+    };
+    this.locUpdate = this.locUpdate.bind(this);
+    this.handleFetch = this.handleFetch.bind(this);
   }
 
   locUpdate(loc) {
@@ -18,14 +20,19 @@ class App extends React.Component {
 
   handleFetch() {
     console.log(`fetching: ${this.state.location}`);
-    // fetch(`/api/weather/${this.state.location}`);
+    fetch(`http://localhost:5000/api/weather/${this.state.location}`)
+    .then(response => response.json)
+    .then(data => {
+      this.setState({result: data});
+      console.log("got data");
+    });
 }
 
   render() {
     return (
       <div className='App'>
         <h2>this is the App title</h2>
-        <Search location={this.state.location} locUpdate={this.locUpdate.bind(this)} handleFetch={this.handleFetch.bind(this)} />
+        <Search location={this.state.location} locUpdate={this.locUpdate} handleFetch={this.handleFetch} />
         <Weather result={this.state.result} />
       </div>
     )

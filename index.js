@@ -1,17 +1,19 @@
 const express = require('express');
 require('dotenv').config();
 const path = require('path');
+const cors = require('cors');
 const app = express();
 const fetch = require('node-fetch');
 
-app.use(express.static(path.join(__dirname, 'ws-client/build')));
+app.use(cors());
+// app.use(express.static(path.join(__dirname, 'ws-client/build')));
 
 // TRY CATCH FOR API CALLS
 
-app.get('/api/weather', (req,res) => {
+app.get('/api/weather/:location', (req,res) => {
     var weather;
-    var test = 'sydney';
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${test}&units=metric&APPID=${process.env.W_API_KEY}`)
+    var location = req.params.location;
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&APPID=${process.env.W_API_KEY}`)
         .then(response => response.json())
         .then(data => res.json(data));
     console.log('weather api called!');
