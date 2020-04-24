@@ -5,7 +5,10 @@ function Weather(props) {
     return (
         <div id='WeatherDiv'>
             <p>i'm a weather component</p>
-            <p>result is: {props.result}</p>
+    {props.result.name ? (
+    <p>Temperature: {props.result.main.temp} °C</p>
+    ) : <p>result is not obtained</p>}
+            
         </div>
     );
 };
