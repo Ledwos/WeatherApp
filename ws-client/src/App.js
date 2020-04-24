@@ -21,7 +21,7 @@ class App extends React.Component {
   handleFetch() {
     console.log(`fetching: ${this.state.location}`);
     fetch(`http://localhost:5000/api/weather/${this.state.location}`)
-    .then(response => response.json)
+    .then(response => response.json())
     .then(data => {
       this.setState({result: data});
       console.log("got data");
@@ -33,7 +33,7 @@ class App extends React.Component {
       <div className='App'>
         <h2>this is the App title</h2>
         <Search location={this.state.location} locUpdate={this.locUpdate} handleFetch={this.handleFetch} />
-        <Weather result={this.state.result} />
+        {/* <Weather result={this.state.result} /> */}
       </div>
     )
   }
