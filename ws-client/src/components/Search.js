@@ -15,8 +15,10 @@ function Search(props) {
 
     return (
         <div id='SearchDiv'>
+            <form onSubmit={handleSubmit}>
                 <input id='searchBar' type='text' onChange={handleChange} ></input>
                 <button type="button" onClick={handleSubmit}>click me</button>
+            </form>
             <p>i'm a search component</p>
             <p>location is: {props.location}</p>
         </div>
