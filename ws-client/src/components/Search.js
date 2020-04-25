@@ -28,8 +28,7 @@ function Search(props) {
             <select onChange={handleTheme} id="themeSelect">
                 <option value="wComp">Just the weather Please!</option>
                 <option value="rComp">Roman War</option>
-                <option value="Science">The Scientist</option>
-                <option value="Jazz">The Jazz Bar</option>
+                <option value="sciComp">The Scientist</option>
             </select>
         </div>
     );
