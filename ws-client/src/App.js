@@ -7,11 +7,13 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      location: "sydney",
-      result: "not obtained yet"
+      submit: false,
+      location: " ",
+      result: " "
     };
     this.locUpdate = this.locUpdate.bind(this);
     this.handleFetch = this.handleFetch.bind(this);
+    this.homeClick = this.homeClick.bind(this);
   }
 
   locUpdate(loc) {
@@ -23,17 +25,19 @@ class App extends React.Component {
     fetch(`/api/weather/${this.state.location}`)
     .then(response => response.json())
     .then(data => {
-      this.setState({result: data});
-      console.log("got data");
+      this.setState({result: data, submit: true});
     });
 }
+
+  homeClick() {
+    this.setState({submit: false, location: " ", result: " "});
+  }
 
   render() {
     return (
       <div className='App'>
-        <h2>this is the App title</h2>
-        <Search location={this.state.location} locUpdate={this.locUpdate} handleFetch={this.handleFetch} />
-        <Weather result={this.state.result} />
+        <h2 onClick={this.homeClick}>Weather Story</h2>
+        {this.state.submit ? <Weather result={this.state.result} /> : <Search location={this.state.location} locUpdate={this.locUpdate} handleFetch={this.handleFetch} />}
       </div>
     )
   }

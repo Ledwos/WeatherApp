@@ -19,8 +19,6 @@ function Search(props) {
                 <input id='searchBar' type='text' onChange={handleChange} ></input>
                 <button type="button" onClick={handleSubmit}>click me</button>
             </form>
-            <p>i'm a search component</p>
-            <p>location is: {props.location}</p>
         </div>
     );
 };
