@@ -27,38 +27,46 @@ describe('App', () => {
   it('renders App', () => {
     shallow(<App />);
   });
-  
-  it('handles onclick on title', () => {
+
+  it('should call homeClick on title click', () => {
     const homeClick = jest.fn();
-    const output = shallow(<h2 onClick={homeClick}>Weather Story</h2>);
-    output.simulate('click');
+    const title = shallow(<h2 onClick={homeClick}>Weather Story</h2>);
+    title.simulate('click');
     expect(homeClick).toHaveBeenCalledTimes(1);
 
   });
 
-  it('should reset state onclick', () => {
+  it('should reset state when called', () => {
+    const spy = jest.spyOn(wrapper.instance(), 'homeClick');
     wrapper.setState({submit: true, location: "tokyo", result: "result"});
-    const homeClick = jest.fn(() => {
-      wrapper.setState({submit: false, location: " ", result: " "})
-    });
-    const title = shallow(<h2 onClick={homeClick}>Weather Story</h2>);
-
     expect(wrapper.state().submit).toEqual(true);
     expect(wrapper.state().location).toEqual('tokyo');
     expect(wrapper.state().result).toEqual('result');
-    title.simulate('click');
+    wrapper.instance().homeClick();
+    expect(spy).toHaveBeenCalledTimes(1);
     expect(wrapper.state().submit).toEqual(false);
     expect(wrapper.state().location).toEqual(' ');
     expect(wrapper.state().result).toEqual(' ');
+  })
 
-  });
+  test('locUpdate updates state.location', () => {
+    wrapper.setState({location: ' '});
+    expect(wrapper.state().location).toEqual(' ');
 
-  it('should do above but with spyon', () => {
-    wrapper.setState({submit: true, location: "tokyo", result: "result"});
-    const spy = jest.spyOn(wrapper.instance(), 'homeClick');
-    wrapper.instance().homeClick();
+    const spy = jest.spyOn(wrapper.instance(), 'locUpdate');
+    wrapper.instance().locUpdate('tokyo');
     expect(spy).toHaveBeenCalledTimes(1);
-    // FUCK YESb\
+    expect(wrapper.state().location).toEqual('tokyo');
+  })
+  
+  test('themeUpdate updates state.theme', () => {
+    wrapper.setState({theme: 'wComp'});
+    expect(wrapper.state().theme).toEqual('wComp');
+
+    const spy = jest.spyOn(wrapper.instance(), 'themeUpdate');
+    wrapper.instance().themeUpdate('rComp');
+    expect(spy).toHaveBeenCalledTimes(1);
+    expect(wrapper.state().theme).toEqual('rComp');
   })
 
 })

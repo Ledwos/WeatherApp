@@ -28,7 +28,6 @@ class App extends React.Component {
   };
 
   handleFetch() {
-    console.log(`fetching: ${this.state.location}`);
     fetch(`/api/weather/${this.state.location}`)
     .then(response => response.json())
     .then(data => {
@@ -51,3 +50,4 @@ class App extends React.Component {
 }
 
 export default App;
+
