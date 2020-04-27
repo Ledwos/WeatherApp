@@ -4,9 +4,9 @@ import { shallow } from 'enzyme';
 // import { shallowToJson } from 'enzyme-to-json';
 
 import App from '../App';
-import Weather from './Weather';
+import Rome from './Rome';
 
-describe('Weather render', () => {
+describe('Rome render', () => {
   let apper = shallow(<App />)
   beforeEach(() => {
     apper.setState({
@@ -53,8 +53,8 @@ describe('Weather render', () => {
         }});
   })
   
-  it('renders Weather', () => {
-    shallow(<Weather result={apper.state().result}/>);
+  it('renders Rome', () => {
+    shallow(<Rome result={apper.state().result}/>);
   });
 
 })

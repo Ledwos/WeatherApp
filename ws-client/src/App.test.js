@@ -1,7 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { shallow } from 'enzyme';
+import fetch from './__mocks__/iso-fetch';
 import App from './App';
+import fetchMock from 'fetch-mock';
 
 // test('renders learn react link', () => {
 //   const { getByText } = render(<App />);
@@ -69,6 +71,36 @@ describe('App', () => {
     expect(wrapper.state().theme).toEqual('rComp');
   })
 
+})
+
+
+//Right idea, wrong execution?
+describe('fetch test', () => {
+  afterEach(() => {
+    fetchMock.restore();
+    fetchMock.reset();
+  });
+
+  it('called the right fetch', () => {
+    let wrapper = shallow(<App />);
+    wrapper.setState({location: 'tokyo', submit: false, result: ' '});
+    expect(wrapper.state().location).toEqual('tokyo');
+    expect(wrapper.state().submit).toEqual(false);
+    expect(wrapper.state().result).toEqual(' ');
+
+    fetchMock.mock(`/api/weather/tokyo`, {
+      status: 200,
+      body: {
+        "name":"Tokyo",
+      }
+    })
+
+    wrapper.instance().handleFetch();
+
+    expect(wrapper.state().submit).toEqual(true);
+    expect(wrapper.state().result.name).toEqual('Tokyo');
+
+  })
 })
 
 
