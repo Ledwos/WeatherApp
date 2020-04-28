@@ -43,7 +43,7 @@ class App extends React.Component {
     return (
       <div className='App'>
         <h2 onClick={this.homeClick}>Weather Story</h2>
-        {this.state.result.name ? <Main tag={this.state.theme} result={this.state.result} location={this.state.location} /> : <Search themeUpdate={this.themeUpdate} locUpdate={this.locUpdate} handleFetch={this.handleFetch} />}
+        {this.state.result.cod ? <Main tag={this.state.theme} result={this.state.result} location={this.state.location} /> : <Search themeUpdate={this.themeUpdate} locUpdate={this.locUpdate} handleFetch={this.handleFetch} />}
       </div>
     )
   }

@@ -11,7 +11,7 @@ class Main extends Component {
     };
     render() {
        const TagName = this.components[this.props.tag || 'foo'];
-       return <TagName result={this.props.result}/>
+       return <TagName result={this.props.result} location={this.props.location}/>
     }
 }
 export default Main;
