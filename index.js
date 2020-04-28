@@ -6,7 +6,7 @@ const app = express();
 const fetch = require('node-fetch');
 
 app.use(cors());
-// app.use(express.static(path.join(__dirname, 'ws-client/build')));
+app.use(express.static(path.join(__dirname, 'ws-client/build')));
 
 // TRY CATCH FOR API CALLS
 
