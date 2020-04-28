@@ -24,12 +24,12 @@ function Search(props) {
                 <input id='searchBar' type='text' onChange={handleChange} ></input>
                 <button type="button" onClick={handleSubmit}>click me</button>
             </form>
-            <p>Select a story!</p>
             <select onChange={handleTheme} id="themeSelect">
                 <option value="wComp">Just the weather Please!</option>
-                <option value="rComp">Roman War</option>
-                <option value="sciComp">The Scientist</option>
+                {/* <option value="rComp">Roman War</option>
+                <option value="sciComp">The Scientist</option> */}
             </select>
+            <p>More options coming soon!</p>
         </div>
     );
 };
