@@ -1,28 +1,24 @@
 #WeatherDiv {
     color: white;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     display: flex;
     flex-direction: column;
-    width: 70%;
+    /* width: 70%; */
 }
 
-#LocationBar {
-    border: 2px solid magenta;
-    display: flex;
-    justify-content: space-around;
+tr, td {
+    /* border: 2px solid orange; */
+    padding: 10px;
+}
+
+#ResultBox {
+    /* border: 2px solid orange; */
+    align-self: center;
 }
 
 #Name {
     font-size: 35px;
-    /* border: 2px solid red; */
-    margin: 0;
-    align-self: center;
-}
-
-#LonLat {
-    /* border: 2px solid red; */
-    margin-bottom: 0;
-    align-self: center;
+    text-align: left;
 }
 
 #TempBar {
@@ -54,16 +50,11 @@
     /* border: 2px solid red; */
 }
 
-tr, td {
-    /* border: 2px solid orange; */
-    padding: 5px;
+#InfoBox {
+    padding: 0;
+    /* border: 2px solid red; */
 }
 
-#infoTable {
-    /* border: 2px solid fuchsia; */
-    margin-top: 10px;
-    margin-left: 35px;
-}
 
 
 
