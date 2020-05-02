@@ -10,7 +10,50 @@ class App extends React.Component {
     this.state = {
       submit: false,
       location: " ",
-      result: " ",
+      // result: " ",
+      result: {
+        coord: {
+        lon: 2.35,
+        lat: 48.85
+        },
+        weather: [
+        {
+        id: 804,
+        main: "Clouds",
+        description: "overcast clouds",
+        icon: "04d"
+        }
+        ],
+        base: "stations",
+        main: {
+        temp: 13.84,
+        feels_like: 10.58,
+        temp_min: 13,
+        temp_max: 15,
+        pressure: 1003,
+        humidity: 76
+        },
+        visibility: 10000,
+        wind: {
+        speed: 4.6,
+        deg: 230
+        },
+        clouds: {
+        all: 90
+        },
+        dt: 1588333567,
+        sys: {
+        type: 1,
+        id: 6550,
+        country: "FR",
+        sunrise: 1588307370,
+        sunset: 1588359937
+        },
+        timezone: 7200,
+        id: 2988507,
+        name: "Paris",
+        cod: 200
+        },
       theme: "wComp"
     };
     this.locUpdate = this.locUpdate.bind(this);
