@@ -19,16 +19,6 @@ app.get('/api/weather/:location', (req,res) => {
     console.log(`weather api called! location: ${location}`);
 });
 
-//unsplash fetch
-
-// app.get('/api/image', (req,res) => {
-//     var test = 'tokyo';
-//     fetch(`https://api.unsplash.com/photos/?page=1&per_page=1&query=${test}&client_id=${process.env.U_API_KEY}`)
-//         .then(response => response.json())
-//         .then(data => res.json(data));
-//     console.log('image api called');
-// })
-
 // catchall handler
 // make a separate 404 html?
 

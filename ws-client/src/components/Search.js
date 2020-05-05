@@ -26,8 +26,6 @@ function Search(props) {
             </form>
             <select onChange={handleTheme} id="themeSelect">
                 <option value="wComp">Just the weather Please!</option>
-                {/* <option value="rComp">Roman War</option>
-                <option value="sciComp">The Scientist</option> */}
             </select>
             <p>More options coming soon!</p>
         </div>

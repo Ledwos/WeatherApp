@@ -1,18 +1,14 @@
 #WeatherDiv {
     color: white;
-    /* border: 2px solid blue; */
     display: flex;
     flex-direction: column;
-    /* width: 70%; */
 }
 
 tr, td {
-    /* border: 2px solid orange; */
     padding: 10px;
 }
 
 #ResultBox {
-    /* border: 2px solid orange; */
     align-self: center;
 }
 
@@ -21,21 +17,13 @@ tr, td {
     text-align: left;
 }
 
-#TempBar {
-    display: flex;
-    justify-content: space-evenly;
-    border: 2px solid magenta;
-}
-
 #Temp {
-    /* border: 2px solid red; */
     align-self: center;
     margin: 0;
     font-size: 50px;
 }
 
 #TempDesc {
-    /* border: 2px solid pink; */
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -47,12 +35,10 @@ tr, td {
     flex-wrap: wrap;
     width: 70%;
     margin: 0;
-    /* border: 2px solid red; */
 }
 
 #InfoBox {
     padding: 0;
-    /* border: 2px solid red; */
 }
 
 
