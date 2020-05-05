@@ -1,3 +1,30 @@
 #SearchDiv {
     color: white;
 }
+
+#SearchComp {
+    width: max-content;
+    display: inline-block;
+}
+
+#SearchBar, #SearchBtn, #ThemeSelect {
+    padding: 8px;
+    border-radius: 10px;
+    border: 2px solid rgb(146, 169, 202);
+    font-family: 'Lemon', cursive;
+    color: rgb(0, 143, 199); 
+}
+
+#SearchBar {
+    width: 400px;
+    font-size: 20px;
+}
+
+#SearchBtn, #ThemeSelect {
+    margin: 10px 40px;
+    font-size: 15px;
+}
+
+#SearchBtn:hover, #ThemeSelect:hover {
+    cursor: pointer;
+}

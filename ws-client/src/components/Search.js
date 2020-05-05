@@ -20,13 +20,15 @@ function Search(props) {
 
     return (
         <div id='SearchDiv'>
-            <form onSubmit={handleSubmit}>
-                <input id='searchBar' type='text' onChange={handleChange} ></input>
-                <button type="button" onClick={handleSubmit}>click me</button>
-            </form>
-            <select onChange={handleTheme} id="themeSelect">
-                <option value="wComp">Just the weather Please!</option>
-            </select>
+            <div id='SearchComp'>
+                <form onSubmit={handleSubmit}>
+                    <input id='SearchBar' type='text' onChange={handleChange} ></input>
+                </form>
+                <select onChange={handleTheme} id="ThemeSelect">
+                    <option value="wComp">Just the weather Please!</option>
+                </select>
+                <button type="button" id='SearchBtn' onClick={handleSubmit}>Search</button>
+            </div>
             <p>More options coming soon!</p>
         </div>
     );

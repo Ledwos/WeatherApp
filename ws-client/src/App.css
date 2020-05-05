@@ -7,8 +7,7 @@
 
 #Heading {
   -webkit-text-stroke: 1px rgb(146, 169, 202);
-  font-size: 45px;
-  /* border: 2px solid red; */
+  font-size: 50px;
   width: max-content;
   display: inline-block;
 }
