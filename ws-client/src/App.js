@@ -41,7 +41,7 @@ class App extends React.Component {
   render() {
     return (
       <div className='App'>
-        <h2 onClick={this.homeClick}>Weather Story</h2>
+        <h2 id='Heading' onClick={this.homeClick}>Weather Story</h2>
         {this.state.result.cod ? <Main tag={this.state.theme} result={this.state.result} location={this.state.location} /> : <Search themeUpdate={this.themeUpdate} locUpdate={this.locUpdate} handleFetch={this.handleFetch} />}
       </div>
     )

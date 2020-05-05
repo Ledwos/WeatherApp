@@ -3,12 +3,18 @@
   background-color: rgb(43, 213, 255);
   color: white;
   font-family: 'Lemon', cursive;
-  /* font-family: 'Emblema One', cursive; */
 }
 
-h2 {
+#Heading {
   -webkit-text-stroke: 1px rgb(146, 169, 202);
-  font-size: 40px;
+  font-size: 45px;
+  /* border: 2px solid red; */
+  width: max-content;
+  display: inline-block;
+}
+
+#Heading:hover {
+  cursor: pointer;
 }
 
 
