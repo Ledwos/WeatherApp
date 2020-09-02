@@ -16,7 +16,7 @@ app.get('/api/weather/:location', (req,res) => {
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&APPID=${process.env.W_API_KEY}`)
         .then(response => response.json())
         .then(data => res.json(data));
-    console.log(`weather api called! location: ${location}`);
+    // console.log(`weather api called! location: ${location}`);
 });
 
 // catchall handler
