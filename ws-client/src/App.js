@@ -51,29 +51,21 @@
 // export default App;
 
 
-import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { selectTheme } from './components/reds/wsSlice';
+import React from 'react';
+import { selectResult, clearResult } from './components/reds/wsSlice';
+import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import Search from './components/Search';
+import Weather from './components/Weather';
 
 const App = () => {
-
-  const theme = useSelector(selectTheme);
-    
-  const handleFetch = () => {
-    fetch(`/api/weather/${this.state.location}`)
-    .then(response => response.json())
-    .then(data => {
-      this.setState({result: data, submit: true});
-    });
-  };
-
+  
+  const dispatch = useDispatch();
+  const result = useSelector(selectResult);
   return (
     <div className='App'>
-      <h2 id='Heading'>Weather Story</h2>
-      <p>theme: {theme}</p>
-      <Search handleFetch={handleFetch}/>
+      <h2 id='Heading' onClick={() => dispatch(clearResult())}>Weather Story</h2>
+      {result.cod ? <Weather/> : <Search/>}
     </div>
   );
 };
