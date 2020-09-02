@@ -52,10 +52,14 @@
 
 
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { selectTheme } from './components/reds/wsSlice';
 import './App.css';
 import Search from './components/Search';
 
 const App = () => {
+
+  const theme = useSelector(selectTheme);
     
   const handleFetch = () => {
     fetch(`/api/weather/${this.state.location}`)
@@ -68,6 +72,7 @@ const App = () => {
   return (
     <div className='App'>
       <h2 id='Heading'>Weather Story</h2>
+      <p>theme: {theme}</p>
       <Search handleFetch={handleFetch}/>
     </div>
   );
