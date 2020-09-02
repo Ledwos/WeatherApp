@@ -5,7 +5,7 @@ import {
     updateResult, 
     updateSubmit, 
     updateLocation,
-    selectLocation  } from './reds/wsSlice';
+    selectLocation  } from '../reds/wsSlice';
 import './Search.css';
 
 function Search(props) {

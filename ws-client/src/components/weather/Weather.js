@@ -1,5 +1,5 @@
 import React, { useLayoutEffect } from 'react';
-import { selectResult, selectLocation } from './reds/wsSlice';
+import { selectResult, selectLocation } from '../reds/wsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import './Weather.css';
 
